@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 
 public class Main {
 
@@ -42,7 +42,7 @@ public class Main {
 		lhi.addNeighbour(kpo); //Kuopio
 
 		//Skapar en lista för grafen och sätter in alla noder
-		ArrayList<Node> graph = new ArrayList();
+		ArrayList<Node> graph = new ArrayList<>();
 		graph.add(hki);
 		graph.add(tpe);
 		graph.add(tku);
