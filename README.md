@@ -1,4 +1,4 @@
 # Projekt 1 - Ruttsökning
 
-Info om uppgiften på itslearning.
+Info om uppgiften finns på itslearning.
 
