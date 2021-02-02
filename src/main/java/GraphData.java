@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class GraphData {
 
@@ -8,8 +9,12 @@ public class GraphData {
         /**
          * Noderna instansieras med namn och koordinater i en
          * HashMap med en kortare sträng som nyckel (ID)
+         *
+         * LinkedHashMap är samma sak som HashMap, men dess element
+         * förblir i sin ursprungliga ordning (en vanlig HashMap har ingen
+         * garanterad ordning)
          */
-        HashMap<String,Node> nodes = new HashMap<>();
+        LinkedHashMap<String,Node> nodes = new LinkedHashMap<>();
         nodes.put("bole", new Node("Böle bibliotek",           60.2008, 24.9359));
         nodes.put("vall", new Node("Vallgårds bibliotek",      60.1923, 24.9626));
         nodes.put("berg", new Node("Berghälls bibliotek",      60.1837, 24.9536));
@@ -25,11 +30,11 @@ public class GraphData {
         HashMap<String,String[]> neighbours = new HashMap<>();
         neighbours.put("bole", new String[]{"tolo", "berg"});
         neighbours.put("vall", new String[]{"berg"});
-        neighbours.put("berg", new String[]{"bole", "vall", "tolo", "oodi", "rich"});
+        neighbours.put("berg", new String[]{"bole", "vall", "tolo", "oodi"});
         neighbours.put("tolo", new String[]{"bole", "berg", "oodi", "bush"});
-        neighbours.put("oodi", new String[]{"tolo", "berg", "bush"});
-        neighbours.put("rich", new String[]{"berg", "bush"});
-        neighbours.put("bush", new String[]{"rich", "oodi", "tolo"});
+        neighbours.put("oodi", new String[]{"tolo", "berg", "rich"});
+        neighbours.put("rich", new String[]{"oodi", "bush"});
+        neighbours.put("bush", new String[]{"tolo", "rich"});
 
         /**
          *  Själva grafstrukturen kommer att sparas i följande ArrayList
@@ -45,8 +50,8 @@ public class GraphData {
             nodes.get(id).setId(id);
 
             /* Iterera nodens grannar och lägg till dem till noden */
-            for (String neighbour : neighbours.get(id)) {
-                nodes.get(id).addNeighbour(nodes.get(neighbour));
+            for (String neighbor : neighbours.get(id)) {
+                nodes.get(id).addNeighbour(nodes.get(neighbor));
             }
 
             /* Lägg in noden i själva grafstrukturen */
@@ -55,5 +60,6 @@ public class GraphData {
 
         return graph;
     }
+
 
 }

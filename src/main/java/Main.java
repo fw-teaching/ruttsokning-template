@@ -2,7 +2,9 @@
  * Projekt 1 - ruttsökning
  *
  * Datastrukturer och algoritmer 2021
- * Programmerare:
+ *
+ * Programmeringsteam:
+ *
  */
 public class Main {
 
