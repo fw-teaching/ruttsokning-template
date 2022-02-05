@@ -1,7 +1,7 @@
 /**
- * Projekt 1 - ruttsökning
+ * Projekt 1 - ruttsökning med A*
  *
- * Datastrukturer och algoritmer 2021
+ * Datastrukturer och algoritmer
  *
  * Programmeringsteam:
  *
