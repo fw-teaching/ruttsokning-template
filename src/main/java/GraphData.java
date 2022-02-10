@@ -46,7 +46,7 @@ public class GraphData {
         neighbors.put("diak", new String[]{"arca", "vall"});
         neighbors.put("vall", new String[]{"diak", "berg"});
         neighbors.put("mejl", new String[]{"lill", "tolo"});
-        neighbors.put("berg", new String[]{"vall", "tolo", "sorn"});
+        neighbors.put("berg", new String[]{"vall", "tolo", "sorn", "oodi"});
         neighbors.put("tolo", new String[]{"bole", "mejl", "berg", "oodi", "hank"});
         neighbors.put("sorn", new String[]{"berg"});
         neighbors.put("oodi", new String[]{"tolo", "berg", "hank", "hels"});
